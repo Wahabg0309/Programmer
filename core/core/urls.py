@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('display', display),
+    path('display_category', display_category),
     path('display_book', display_book),
     path('book_post', book_post),
     path('delete_book<id>', delete_book),
