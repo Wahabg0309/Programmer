@@ -1,0 +1,30 @@
+{% extends "base1.html" %}
+{% block start %}
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">S. No</th>
+        <th scope="col">Student Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">D.O.B</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Department</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in studnt  %}
+          
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td><p>Student id</p></td>
+            <td>{{i.full_name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.d.department}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock start %}

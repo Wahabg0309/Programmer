@@ -1,0 +1,46 @@
+{% extends "base1.html" %}
+{% block start %}
+<form  class="container col-4 card p-4 mt-5" method="post">
+    {% csrf_token %}
+    <h1><b>Enter Details:</b></h1>
+    <hr>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Department:</label>
+      <select style="width: 40%;" class="form-select" name="deprt">
+        <option selected>Select</option>
+        {% for i in deprt %}
+        <option value="{{ i.id }}">{{ i.department }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Student Id:</label>
+        <input type="text" name="student_id" class="form-control" style="width: 50%;">
+      </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Full Name:</label>
+        <input type="text" name="full_name" class="form-control" style="width: 50%;">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Age:</label>
+        <input type="date" name="age" class="form-control" style="width: 40%;">
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" name="email" class="form-control" style="width: 50%;" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Address:</label>
+      <textarea name="address" id="address" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success" style="width: 30%;">Submit</button>
+    {% if messages %}
+    {{ message.tags }}
+    <div class="alert alert-success" role="alert">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+      </div>
+{% endif %}
+  </form>
+{% endblock start %}
