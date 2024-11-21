@@ -68,3 +68,9 @@ def delete_book(request, id):
     student_obj = book.objects.get(id=id)
     student_obj.delete()
     return Response({"":"Deleted"})
+
+@api_view(['GET'])
+def display_category(request):
+    data = categorie.objects.all()
+    serializer = CategorySerializer(data, many= True)
+    return Response(serializer.data)
