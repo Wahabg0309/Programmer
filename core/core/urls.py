@@ -19,13 +19,7 @@ from django.urls import path
 from home.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
-    path('display', display),
+    path('student/', StudentAPI.as_view()),
+    path('book/', BookAPI.as_view()),
     path('display_category', display_category),
-    path('display_book', display_book),
-    path('book_post', book_post),
-    path('delete_book<id>', delete_book),
-    path('update_book<id>', update_book),
-    path('delete<id>', delete),
-    path('update<id>', update),
 ]

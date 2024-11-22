@@ -22,7 +22,7 @@ class StudentSerializer(serializers.ModelSerializer):
                     raise serializers.ValidationError({"error":"Phone can't be alphabets"})
         if data['age'] < 18:
                 raise serializers.ValidationError({"":"Age must be >= 18"})
-                return data
+        return data
 
 
 class CategorySerializer(serializers.ModelSerializer):
